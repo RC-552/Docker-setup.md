@@ -1,9 +1,23 @@
+This document captures the hands-on steps followed to set up Docker on an AWS EC2 instance running Ubuntu 22.04. This is part of my DevOps Learning Journey.
 # Docker Setup on Ubuntu EC2
 
-## Step 1 - Update System (sudo apt update && sudo apt upgrade-y)
-## Step 2- Install Docker ( sudo apt install docker.io-y)
-## Step 3 - Start and Enable Docker (sudo systemctl start docker)(sudo systemctl enable docker)
-## step 4 - Did a Test Run TO run "Hello World" (sudo docker run hello-world)
-## step 5- check running containers ( sudo docker ps)
-## step 6 - check all containers even stopped ones ( sudo docker ps -a)
-## step 7 - remove old containers (sudo docker rm id)
+## Step 1 - Update System
+(sudo apt update && sudo apt upgrade-y)
+
+## Step 2- Install Docker
+( sudo apt install docker.io-y)
+
+## Step 3 - Start and Enable Docker
+(sudo systemctl start docker)(sudo systemctl enable docker)
+
+## step 4 - Did a Test Run TO run "Hello World"
+(sudo docker run hello-world)
+
+## step 5- check running containers
+( sudo docker ps)
+
+## step 6 - check all containers even stopped ones
+( sudo docker ps -a)
+
+## step 7 - remove old containers
+(sudo docker rm container-id)
