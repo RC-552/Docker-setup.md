@@ -3,4 +3,7 @@
 ## Step 1 - Update System (sudo apt update && sudo apt upgrade-y)
 ## Step 2- Install Docker ( sudo apt install docker.io-y)
 ## Step 3 - Start and Enable Docker (sudo systemctl start docker)(sudo systemctl enable docker)
-## step - Did a Test Run TO run "Hello World" (sudo docker run hello-world)
+## step 4 - Did a Test Run TO run "Hello World" (sudo docker run hello-world)
+## step 5- check running containers ( sudo docker ps)
+## step 6 - check all containers even stopped ones ( sudo docker ps -a)
+## step 7 - remove old containers (sudo docker rm id)
