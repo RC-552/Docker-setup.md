@@ -29,4 +29,5 @@ jobs:
         file: ./Docker/Flask-App/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+        ## app.py
 
