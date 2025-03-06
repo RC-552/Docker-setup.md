@@ -3,7 +3,7 @@ name: Build and Push Docker Image to Docker Hub
 on:
   push:
     branches:
-      - main  # Trigger only on main branch push
+      - main
 
 jobs:
   build-and-push:
@@ -22,12 +22,11 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and Push Image
+    - name: Build and Push Docker Image
       uses: docker/build-push-action@v5
       with:
-        context: ./Docker/Flask-App
-        file: ./Docker/Flask-App/Dockerfile
+        context: ./Flask-App
+        file: ./Flask-App/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
-        ## app.py
 
