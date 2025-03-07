@@ -1,0 +1,31 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main  # Runs when changes are pushed to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_EC2_PUBLIC_IP }}
+          username: ubuntu
+          key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+          script: |
+            echo "Pulling the latest Docker image..."
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+
+            echo "Stopping old container..."
+            sudo docker stop flask-container || true
+            sudo docker rm flask-container || true
+
+            echo "Starting new container..."
+            sudo docker run -d -p 5000:5000 --name flask-container ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
