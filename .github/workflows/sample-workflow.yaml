@@ -1,0 +1,14 @@
+name: My First Manual Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  my-first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Welcome Message
+        run: echo "Welcome to my first GitHub Actions workflow!"
+
+      - name: Show Current Date
+        run: date
